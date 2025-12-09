@@ -168,14 +168,14 @@ public class Circuit
         counter++;
     }
 
-    public void AddNewComp (CircuitComponent comp)
+    public void AddNewComp(CircuitComponent comp)
     {
         componentList.Add(comp);
     }
 
     // Запуск Цепи
 
-    public void StartCircuit ()
+    public void StartCircuit()
     {
         List<VoltageSource> allVoltageCircuits = new();
 
@@ -201,7 +201,7 @@ public class Circuit
         {
             ConvertComponentsToSpecialCode();
 
-            if(!CheckStateOfCircuit())
+            if (!CheckStateOfCircuit())
             {
                 Debug.Log("Цепь не соединена! Проверьте подкючение");
                 return;
@@ -209,12 +209,12 @@ public class Circuit
 
             int counter = 0;
 
-            while(convertedCodes.Count != 1)
+            while (convertedCodes.Count != 1)
             {
-                counter ++;
+                counter++;
                 FindElementsThatCanBeRemoved();
 
-                if(counter == 100)
+                if (counter == 100)
                 {
                     Debug.Log("Too many attempts!");
                     break;
@@ -230,11 +230,11 @@ public class Circuit
     }
 
     // Проверка на то, соединены ли все компоненты в цепи или нет (замкнутая ли цепь)
-    private bool CheckStateOfCircuit ()
+    private bool CheckStateOfCircuit()
     {
-        foreach(var i in convertedCodes)
+        foreach (var i in convertedCodes)
         {
-            if(i.ConToPort1.Count == 0 || i.ConToPort2.Count == 0)
+            if (i.ConToPort1.Count == 0 || i.ConToPort2.Count == 0)
             {
                 return false;
             }
@@ -244,7 +244,7 @@ public class Circuit
     }
 
     // Поиск параллельных и последовательных соединений
-    private void FindElementsThatCanBeRemoved ()
+    private void FindElementsThatCanBeRemoved()
     {
         for (int x = 0; x < convertedCodes.Count; x++)
         {
@@ -261,7 +261,7 @@ public class Circuit
                     }
                 }
             }
-        }  
+        }
     }
 
     // При нахождении параллельного соединения
@@ -269,26 +269,48 @@ public class Circuit
     {
         if (x.ConToPort1.Count == 1 && x.ConToPort2.Count == 1 && y.ConToPort1.Count == 1 && y.ConToPort2.Count == 1)
         {
-            if (x.ConToPort1[0] == y.ConToPort1[0])
+            if ((x.ConToPort1[0] == y.ConToPort1[0]) && (x.ConToPort2[0] == y.ConToPort2[0]))
             {
-                if (x.ConToPort2[0] == y.ConToPort2[0])
+                Debug.Log("Parallel connection founded");
+
+                List<CountComp> allParallelConnections = new()
                 {
-                    Debug.Log("Parallel connection founded");
+                    x,
+                    y
+                };
 
-                    double l1 = Math.Round(1 / x.Count, 2);
-                    double l2 = Math.Round(1 / x.Count, 2);
-                    double l3 = l1 + l2;
-                    double answer = Math.Round(1 / l3, 2);
+                double sum = 0d;
 
-                    CountComp newComp = new (x.Port1, x.Port2, (float)answer, x.ConToPort1, x.ConToPort2);
-
-                    ClearAllPortData(y.Port1);
-                    ClearAllPortData(y.Port2);
-
-                    convertedCodes.Remove(x);
-                    convertedCodes.Remove(y);
-                    convertedCodes.Add(newComp);
+                foreach (var i in convertedCodes)
+                {
+                    if (i.ConToPort1.Count == 1 && i.ConToPort2.Count == 1)
+                    {
+                        if (i.ConToPort1[0] == x.ConToPort1[0] && i.ConToPort2[0] == x.ConToPort1[0])
+                        {
+                            if (!allParallelConnections.Contains(i))
+                            {
+                                allParallelConnections.Add(i);
+                            }
+                        }
+                    }
                 }
+
+                foreach (var l in allParallelConnections)
+                {
+                    sum += Math.Round(1 / l.Count, 2);
+                }
+
+
+                double answer = Math.Round(1 / sum, 2);
+
+                CountComp newComp = new(x.Port1, x.Port2, (float)answer, x.ConToPort1, x.ConToPort2);
+
+                ClearAllPortData(y.Port1);
+                ClearAllPortData(y.Port2);
+
+                convertedCodes.Remove(x);
+                convertedCodes.Remove(y);
+                convertedCodes.Add(newComp);
             }
         }
     }
@@ -296,15 +318,15 @@ public class Circuit
     // При нахождении последовательного соединения
     private void FindNextConnection(CountComp x, CountComp y)
     {
-        if(x.ConToPort2.Count == 1 && y.ConToPort1.Count == 1)
+        if (x.ConToPort2.Count == 1 && y.ConToPort1.Count == 1)
         {
-            if(x.ConToPort2[0] == y.Port1)
+            if (x.ConToPort2[0] == y.Port1)
             {
                 Debug.Log("Next connection founded");
 
                 double answer = x.Count + y.Count;
 
-                CountComp newComp = new (x.Port1, y.Port2, (float)answer, x.ConToPort1, y.ConToPort2);
+                CountComp newComp = new(x.Port1, y.Port2, (float)answer, x.ConToPort1, y.ConToPort2);
 
                 convertedCodes.Remove(x);
                 convertedCodes.Remove(y);
@@ -314,16 +336,16 @@ public class Circuit
     }
 
     // Очищает информацию о тех портах, которые были удалены во время поиска параллельных или последовательных соединений
-    private void ClearAllPortData (int port)
+    private void ClearAllPortData(int port)
     {
         foreach (var x in convertedCodes)
         {
-            if(x.ConToPort1.Contains(port))
+            if (x.ConToPort1.Contains(port))
             {
                 x.ConToPort1.Remove(port);
             }
 
-            if(x.ConToPort2.Contains(port))
+            if (x.ConToPort2.Contains(port))
             {
                 x.ConToPort2.Remove(port);
             }
@@ -340,6 +362,7 @@ public class Circuit
     private void ConvertComponentsToSpecialCode()
     {
         List<string> allCircuitComponentCodes = new();
+        convertedCodes.Clear();
 
         foreach (var i in componentList)
         {
