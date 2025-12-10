@@ -230,6 +230,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1817285116}
     m_Modifications:
+    - target: {fileID: 1492307869219306976, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
+      propertyPath: m_Name
+      value: Resistor (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 4814658870509143612, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
       propertyPath: componentCount
       value: 1
@@ -237,10 +241,6 @@ PrefabInstance:
     - target: {fileID: 4814658870509143612, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
       propertyPath: ResistanceCount
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1492307869219306976, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
-      propertyPath: m_Name
-      value: Resistor (3)
       objectReference: {fileID: 0}
     - target: {fileID: 4999352815918593697, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -804,6 +804,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1817285116}
     m_Modifications:
+    - target: {fileID: 1492307869219306976, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
+      propertyPath: m_Name
+      value: Resistor (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 4814658870509143612, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
       propertyPath: componentCount
       value: 1
@@ -811,10 +815,6 @@ PrefabInstance:
     - target: {fileID: 4814658870509143612, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
       propertyPath: ResistanceCount
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1492307869219306976, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
-      propertyPath: m_Name
-      value: Resistor (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4999352815918593697, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1020,6 +1020,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1817285116}
     m_Modifications:
+    - target: {fileID: 1492307869219306976, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
+      propertyPath: m_Name
+      value: Resistor (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 4814658870509143612, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
       propertyPath: componentCount
       value: 1
@@ -1027,10 +1031,6 @@ PrefabInstance:
     - target: {fileID: 4814658870509143612, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
       propertyPath: ResistanceCount
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1492307869219306976, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
-      propertyPath: m_Name
-      value: Resistor (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4999352815918593697, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1191,6 +1191,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1817285116}
     m_Modifications:
+    - target: {fileID: 1492307869219306976, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
+      propertyPath: m_Name
+      value: Resistor (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 4814658870509143612, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
       propertyPath: componentCount
       value: 1
@@ -1198,10 +1202,6 @@ PrefabInstance:
     - target: {fileID: 4814658870509143612, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
       propertyPath: ResistanceCount
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1492307869219306976, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
-      propertyPath: m_Name
-      value: Resistor (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4999352815918593697, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1316,6 +1316,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.65
       objectReference: {fileID: 0}
+    - target: {fileID: 8548165490370965657, guid: 6ce02a4f354330a4e9467c119b9551d1, type: 3}
+      propertyPath: componentCount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1334,6 +1338,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1817285116}
     m_Modifications:
+    - target: {fileID: 1492307869219306976, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
+      propertyPath: m_Name
+      value: Resistor
+      objectReference: {fileID: 0}
     - target: {fileID: 4814658870509143612, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
       propertyPath: componentCount
       value: 1
@@ -1341,10 +1349,6 @@ PrefabInstance:
     - target: {fileID: 4814658870509143612, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
       propertyPath: ResistanceCount
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1492307869219306976, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
-      propertyPath: m_Name
-      value: Resistor
       objectReference: {fileID: 0}
     - target: {fileID: 4999352815918593697, guid: 7745fe0185235c544add42d60cf95e38, type: 3}
       propertyPath: m_LocalPosition.x

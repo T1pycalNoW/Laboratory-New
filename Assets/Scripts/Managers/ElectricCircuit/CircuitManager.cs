@@ -207,21 +207,15 @@ public class Circuit
                 return;
             }
 
-            int counter = 0;
-
-            while (convertedCodes.Count != 1)
+            while(true)
             {
-                counter++;
-                FindElementsThatCanBeRemoved();
-
-                if (counter == 100)
+                bool state = FindElementsThatCanBeRemoved();
+                
+                if(!state)
                 {
-                    Debug.Log("Too many attempts!");
                     break;
                 }
             }
-
-            Debug.Log(convertedCodes[0].Count);
         }
         else
         {
@@ -244,7 +238,7 @@ public class Circuit
     }
 
     // Поиск параллельных и последовательных соединений
-    private void FindElementsThatCanBeRemoved()
+    private bool FindElementsThatCanBeRemoved()
     {
         for (int x = 0; x < convertedCodes.Count; x++)
         {
@@ -255,17 +249,27 @@ public class Circuit
                     // Debug.Log("1 check passed");
                     if (convertedCodes[x].Count != 0 && convertedCodes[y].Count != 0)
                     {
-                        // Debug.Log("Check Removing");
-                        FindParallelConnection(convertedCodes[x], convertedCodes[y]);
-                        FindNextConnection(convertedCodes[x], convertedCodes[y]);
+                        if(!FindParallelConnection(convertedCodes[x], convertedCodes[y]))
+                        {
+                            if(FindNextConnection(convertedCodes[x], convertedCodes[y]))
+                            {
+                                return true;
+                            }
+                        }
+                        else
+                        {
+                            return true;
+                        }
                     }
                 }
             }
         }
+
+        return false;
     }
 
     // При нахождении параллельного соединения
-    private void FindParallelConnection(CountComp x, CountComp y)
+    private bool FindParallelConnection(CountComp x, CountComp y)
     {
         if (x.ConToPort1.Count == 1 && x.ConToPort2.Count == 1 && y.ConToPort1.Count == 1 && y.ConToPort2.Count == 1)
         {
@@ -285,10 +289,12 @@ public class Circuit
                 {
                     if (i.ConToPort1.Count == 1 && i.ConToPort2.Count == 1)
                     {
-                        if (i.ConToPort1[0] == x.ConToPort1[0] && i.ConToPort2[0] == x.ConToPort1[0])
+                        if (i.ConToPort1[0] == x.ConToPort1[0] && i.ConToPort2[0] == x.ConToPort2[0])
                         {
                             if (!allParallelConnections.Contains(i))
                             {
+                                Debug.Log("Found New Element!");
+
                                 allParallelConnections.Add(i);
                             }
                         }
@@ -300,23 +306,32 @@ public class Circuit
                     sum += Math.Round(1 / l.Count, 2);
                 }
 
-
                 double answer = Math.Round(1 / sum, 2);
 
                 CountComp newComp = new(x.Port1, x.Port2, (float)answer, x.ConToPort1, x.ConToPort2);
 
-                ClearAllPortData(y.Port1);
-                ClearAllPortData(y.Port2);
+                foreach (var l in allParallelConnections)
+                {
+                    if(l.ID != x.ID)
+                    {
+                        ClearAllPortData(l.Port1);
+                        ClearAllPortData(l.Port2);
+                    }                  
 
-                convertedCodes.Remove(x);
-                convertedCodes.Remove(y);
+                    convertedCodes.Remove(l);   
+                }
+
                 convertedCodes.Add(newComp);
+
+                return true;
             }
         }
+
+        return false;
     }
 
     // При нахождении последовательного соединения
-    private void FindNextConnection(CountComp x, CountComp y)
+    private bool FindNextConnection(CountComp x, CountComp y)
     {
         if (x.ConToPort2.Count == 1 && y.ConToPort1.Count == 1)
         {
@@ -331,8 +346,12 @@ public class Circuit
                 convertedCodes.Remove(x);
                 convertedCodes.Remove(y);
                 convertedCodes.Add(newComp);
+
+                return true;
             }
         }
+
+        return false;
     }
 
     // Очищает информацию о тех портах, которые были удалены во время поиска параллельных или последовательных соединений
@@ -435,6 +454,8 @@ public class Circuit
 
             CountComp newCountComp = new(p1, p2, c, c1, c2);
             convertedCodes.Add(newCountComp);
+
+            Debug.Log($"Added new code: port1 = {p1}, port2 = {p2}");
         }
     }
 
