@@ -216,6 +216,8 @@ public class Circuit
                     break;
                 }
             }
+
+            Debug.Log($"Общее сопротивление цепи: {convertedCodes[0].Count}.");
         }
         else
         {
