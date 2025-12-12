@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Port : MonoBehaviour
+public class Port : MonoBehaviour, IInteractable
 {
     private static int counter = 1;
 
@@ -31,6 +31,11 @@ public class Port : MonoBehaviour
         {
             portNumber = 2;
         }
+    }
+
+    public void Interact()
+    {
+        LineManager.Instance.ButtonIsPressed(this.gameObject);
     }
 
     public void AddNewPort (int _portID)

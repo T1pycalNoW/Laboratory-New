@@ -20,11 +20,11 @@ public class CircuitManager : MonoBehaviour
         Instance = this;
     }
 
-    void Update()
+    public void StartCircuitByEDC (CircuitComponent EDC)
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        foreach (var i in AllCircuits)
         {
-            foreach (var i in AllCircuits)
+            if(i.ComponentList.Contains(EDC))
             {
                 i.StartCircuit();
             }

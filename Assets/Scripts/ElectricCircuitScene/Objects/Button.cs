@@ -1,19 +1,8 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Outline))]
-public class Button : MonoBehaviour, IInteractable
+public class Button : MonoBehaviour
 {
-    private Outline outline;
-
-    private void Start()
-    {
-        outline = GetComponent<Outline>();    
-    }
-
-    public void Interact()
-    {
-        LineManager.Instance.ButtonIsPressed(this.gameObject);
-    }
+    [SerializeField] private Outline outline;
 
     private void OnMouseEnter()
     {
