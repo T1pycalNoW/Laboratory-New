@@ -1,8 +1,14 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-    [SerializeField] private Outline outline;
+    private Outline outline;
+
+    private void Awake ()
+    {
+        outline = GetComponent<Outline>();
+    }
 
     private void OnMouseEnter()
     {
@@ -18,5 +24,5 @@ public class Button : MonoBehaviour
         {
             outline.enabled = false;
         }
-    }
+    } 
 }

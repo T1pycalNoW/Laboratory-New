@@ -14,7 +14,7 @@ public class MouseRaycast : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0))
         {
             MouseInteract();
         }
@@ -47,13 +47,15 @@ public class MouseRaycast : MonoBehaviour
         return null;
     }
 
-    private GameObject GetMouseClickObject(string tag) // Кастует луч и возвращает объект, если совпадает тэг
+    public GameObject GetMouseClickObject(string tag) // Кастует луч и возвращает объект, если совпадает тэг
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit))
         {
+            Debug.Log(hit.collider.gameObject);
+
             if (hit.collider.CompareTag(tag))
             {
                 return hit.collider.gameObject;

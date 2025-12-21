@@ -466,7 +466,7 @@ public class Circuit
 
 #endregion
 
-#region  Count Comp
+#region Count Comp
 
 [Serializable]
 public class CountComp

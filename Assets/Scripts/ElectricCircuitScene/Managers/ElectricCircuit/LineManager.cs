@@ -18,6 +18,7 @@ public class LineManager : MonoBehaviour
     [SerializeField] private GameObject EndPoint;
 
     private Rope curLine;
+    private GameObject curPort;
     private bool isDrawing;
     private Port firstPort;
 
@@ -35,6 +36,11 @@ public class LineManager : MonoBehaviour
             if (hitPoint != null)
             {
                 curLine.SetEndPoint(hitPoint.transform);
+            }
+
+            if(Input.GetKeyDown(KeyCode.Delete))
+            {
+                StopDrawing();
             }
         }
     }
@@ -65,6 +71,7 @@ public class LineManager : MonoBehaviour
 
         newRopeComp.SetStartPoint(startPoint.transform);
         curLine = newRopeComp;
+        curPort = startPoint;
         isDrawing = true;
 
         firstPort = obj1.GetComponent<Port>();
@@ -114,5 +121,15 @@ public class LineManager : MonoBehaviour
             }
         }
         connectedLines.Clear();
+    }
+
+    private void StopDrawing()
+    {
+        Destroy(curLine.gameObject);
+        Destroy(curPort);
+
+        isDrawing = false;
+        curLine = null;
+        firstPort = null;
     }
 }
