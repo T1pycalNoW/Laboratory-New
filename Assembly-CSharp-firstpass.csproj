@@ -65,25 +65,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Plugins\GogoGaga\OptimizedRopesAndCables\Script\Rope.cs" />
-    <Compile Include="Assets\Plugins\Real-Time Procedural Cable Simple\Scripts\CableProceduralSimple.cs" />
-    <Compile Include="Assets\Plugins\Real-Time Procedural Cable Simple\Scripts\CableProceduralStatic.cs" />
-    <Compile Include="Assets\Plugins\Real-Time Procedural Cable Simple\Scripts\CableProceduralCurve.cs" />
     <Compile Include="Assets\Plugins\GogoGaga\OptimizedRopesAndCables\Example\Scripts\PointsAssignExample.cs" />
     <Compile Include="Assets\Plugins\GogoGaga\OptimizedRopesAndCables\Example\Scripts\CameraMove.cs" />
     <Compile Include="Assets\Plugins\GogoGaga\OptimizedRopesAndCables\Script\RopeMesh.cs" />
-    <Compile Include="Assets\Plugins\QuickOutline\Scripts\Outline.cs" />
-    <Compile Include="Assets\Plugins\Real-Time Procedural Cable Simple\Scripts\CableProceduralMultipoint.cs" />
     <Compile Include="Assets\Plugins\GogoGaga\OptimizedRopesAndCables\Script\RopeWindEffect.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Plugins\Real-Time Procedural Cable Simple\ReadmeSimpleCable.txt" />
-    <None Include="Assets\Plugins\QuickOutline\Resources\Shaders\OutlineMask.shader" />
     <None Include="Assets\Plugins\GogoGaga\OptimizedRopesAndCables\Third-Party Notices.txt" />
-    <None Include="Assets\Plugins\Real-Time Procedural Cable Simple\ReadmeStaticCable.txt" />
-    <None Include="Assets\Plugins\QuickOutline\Readme.txt" />
-    <None Include="Assets\Plugins\Real-Time Procedural Cable Simple\ReadmeCurveCable.txt" />
-    <None Include="Assets\Plugins\Real-Time Procedural Cable Simple\ReadmeMultiPointCable.txt" />
-    <None Include="Assets\Plugins\QuickOutline\Resources\Shaders\OutlineFill.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

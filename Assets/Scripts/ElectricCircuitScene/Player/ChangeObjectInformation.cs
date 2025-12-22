@@ -16,7 +16,7 @@ public class ChangeObjectInformation : MonoBehaviour
     private MouseRaycast mr;
     private bool isMoving = false;
 
-    private void Awake ()
+    private void Awake()
     {
         Instance = this;
     }
@@ -25,17 +25,22 @@ public class ChangeObjectInformation : MonoBehaviour
     {
         mr = GetComponent<MouseRaycast>();
 
-        inputField.onValueChanged.AddListener(OnValueChanged);
+        inputField.onEndEdit.AddListener(OnEndEdit);
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isMoving)
         {
             GameObject clickObject = mr.GetMouseClickObject("CircuitComponent");
 
             if (clickObject != null)
             {
+                if(curComp)
+                {
+                    StopMoving();
+                }
+
                 CircuitComponent circComp = clickObject.GetComponent<CircuitComponent>();
                 curComp = circComp;
 
@@ -43,46 +48,46 @@ public class ChangeObjectInformation : MonoBehaviour
             }
         }
 
-        if(curComp)
+        if (curComp)
         {
-            if(Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.M) && !isMoving)
             {
-                isMoving = !isMoving;
+                StartMoving();
             }
 
-            if(isMoving)
+            if(isMoving && Input.GetKeyDown(KeyCode.Escape))
             {
-                
+                StopMoving();
             }
-        
-            if(Input.GetKeyDown(KeyCode.RightArrow))
+
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 ChangeRotation(-90);
             }
 
-            if(Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 ChangeRotation(90);
             }
 
-            if(Input.GetKeyDown(KeyCode.Delete))
+            if (Input.GetKeyDown(KeyCode.Delete))
             {
                 ObjectManager.Instance.RemoveObject(curComp.gameObject);
             }
         }
     }
 
-    private void FixedUpdate() 
+    private void FixedUpdate()
     {
-        if(ObjectManager.Instance.State == ColliderState.Small)
+        if (ObjectManager.Instance.State == ColliderState.Small)
         {
             ObjectManager.Instance.State = ColliderState.Default;
-        }    
+        }
     }
 
-    private void OnValueChanged(string newText)
+    private void OnEndEdit(string newText)
     {
-        if(!curComp) return;
+        if (!curComp) return;
 
         if (float.TryParse(newText, out float newValue))
         {
@@ -90,10 +95,35 @@ public class ChangeObjectInformation : MonoBehaviour
         }
     }
 
-    private void ChangeRotation (float angle)
+    private void ChangeRotation(float angle)
     {
-        if(!curComp) return;
+        if (!curComp) return;
 
         curComp.transform.Rotate(0f, angle, 0f);
+    }
+
+    private void StartMoving()
+    {
+        curComp.AddComponent<MoveObject>();
+        curComp.GetComponent<Collider>().isTrigger = true;
+
+        isMoving = true;
+    }
+
+    public void StopMoving()
+    {
+        if(curComp == null || !isMoving) return;
+
+        MoveObject mo = curComp.GetComponent<MoveObject>();
+        mo.ChangeMaterial(mo.transform, "White");
+        isMoving = false;
+
+        if (!mo.CanPlace())
+        {
+            mo.ReturnToStartPosition();
+        }
+
+        Destroy(mo);
+        curComp.GetComponent<Collider>().isTrigger = false;
     }
 }

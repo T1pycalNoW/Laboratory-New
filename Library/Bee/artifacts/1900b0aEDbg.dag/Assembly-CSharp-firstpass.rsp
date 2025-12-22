@@ -357,11 +357,6 @@
 "Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Script/Rope.cs"
 "Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Script/RopeMesh.cs"
 "Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Script/RopeWindEffect.cs"
-"Assets/Plugins/QuickOutline/Scripts/Outline.cs"
-"Assets/Plugins/Real-Time Procedural Cable Simple/Scripts/CableProceduralCurve.cs"
-"Assets/Plugins/Real-Time Procedural Cable Simple/Scripts/CableProceduralMultipoint.cs"
-"Assets/Plugins/Real-Time Procedural Cable Simple/Scripts/CableProceduralSimple.cs"
-"Assets/Plugins/Real-Time Procedural Cable Simple/Scripts/CableProceduralStatic.cs"
 -langversion:9.0
 /deterministic
 /optimize-

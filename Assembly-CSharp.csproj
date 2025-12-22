@@ -64,16 +64,53 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.31f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ElectricCircuit\ElectricComponents\Resistor.cs" />
-    <Compile Include="Assets\Scripts\Managers\ElectricCircuit\CircuitManager.cs" />
-    <Compile Include="Assets\Scripts\Objects\Button.cs" />
-    <Compile Include="Assets\Scripts\Objects\IInteractable.cs" />
-    <Compile Include="Assets\Scripts\Player\MouseRaycast.cs" />
-    <Compile Include="Assets\Scripts\ElectricCircuit\ElectricComponents\VoltageSource.cs" />
-    <Compile Include="Assets\Scripts\Managers\ElectricCircuit\LineManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\ElectricCircuit\Port.cs" />
-    <Compile Include="Assets\Scripts\ElectricCircuit\ElectricComponents\Ammeter.cs" />
-    <Compile Include="Assets\Scripts\ElectricCircuit\ElectricComponents\CircuitComponent.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Objects\IInteractable.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Objects\EDSButton.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Objects\Outline.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\UI\NPanel.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\UI\Panel.cs" />
+    <Compile Include="Assets\Scripts\MagneticFieldScene\Managers\ElectricChargeManager.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Objects\DemoObject.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Objects\MoveObject.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Managers\ElectricCircuit\Port.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Managers\ElectricCircuit\CircuitManager.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Managers\Canvas\CanvasManager.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Managers\ElectricCircuit\LineManager.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Player\ChangeObjectInformation.cs" />
+    <Compile Include="Assets\Scripts\MagneticFieldScene\Managers\ChargeForceManager.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\ElectricCircuit\ElectricComponents\VoltageSource.cs" />
+    <Compile Include="Assets\Scripts\MagneticFieldScene\Objects\Charge.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Player\CameraController.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\ElectricCircuit\ElectricComponents\CircuitComponent.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Objects\Button.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Player\MouseRaycast.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\ElectricCircuit\ElectricComponents\Ammeter.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Managers\ElectricCircuit\ObjectManager.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Player\PlaceNewObjects.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\ElectricCircuit\ElectricComponents\Resistor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

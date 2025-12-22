@@ -53,6 +53,7 @@ public class CanvasManager : MonoBehaviour
         }
         else
         {
+            ChangeObjectInformation.Instance.StopMoving();
             ObjectManager.Instance.State = ColliderState.Small;
         }
     }
