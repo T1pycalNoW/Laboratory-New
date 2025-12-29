@@ -8,9 +8,13 @@ public class MoveObject : MonoBehaviour
     private List<Collider> connectedColliders = new();
     private Vector3 StartPosition;
 
+    private ColorChanger cc;
+
     private void Start ()
     {
         StartPosition = transform.position;
+
+        cc = GetComponent<ColorChanger>();
     }
 
     private void Update ()
@@ -24,7 +28,7 @@ public class MoveObject : MonoBehaviour
         if(col.CompareTag("CircuitComponent"))
         {
             connectedColliders.Add(col);
-            ChangeMaterial(this.transform, "Red");
+            cc.ChangeMaterial(this.transform, "Red");
         }
     }
 
@@ -36,7 +40,7 @@ public class MoveObject : MonoBehaviour
 
             if(CanPlace())
             {
-                ChangeMaterial(this.transform, "Green");
+                cc.ChangeMaterial(this.transform, "Green");
             }
         }
     }
@@ -49,47 +53,5 @@ public class MoveObject : MonoBehaviour
     public void ReturnToStartPosition()
     {
         this.transform.position = StartPosition;
-    }
-
-    /// <summary>
-    /// Меняет цвет объекта, путём замены всех материалов в его детях.
-    /// </summary>
-    /// <param name="changeObject">Transform изменяемого объекта.</param>
-    /// <param name="type">Цвет: "Green" - заленый, "Red" - красный, "White" - белый, "Default" - серый.</param>
-    public void ChangeMaterial(Transform changeObject, string type)
-    {
-        Debug.Log($"Changing... Change on {type}");
-        Color newColor = Color.gray;
-
-        switch (type)
-        {
-            case "Green":
-                newColor = Color.green;
-                break;
-            case "Red":
-                newColor = Color.red;
-                break;
-            case "White":
-                newColor = Color.white;
-                break;
-        }
-
-        for (int i = 0; i < changeObject.childCount; i++)
-        {
-            if (changeObject.GetChild(i).TryGetComponent(out MeshRenderer mc))
-            {
-                //mc.material = changeMaterial;
-                mc.material.color = newColor;
-            }
-        }
-
-        for (int i = 0; i < changeObject.childCount; i++)
-        {
-            if (changeObject.GetChild(0).GetChild(i).TryGetComponent(out MeshRenderer mc))
-            {
-                //mc.material = changeMaterial;
-                mc.material.color = newColor;
-            }
-        }
     }
 }

@@ -23,13 +23,17 @@ public class Port : MonoBehaviour, IInteractable
 
         parentComponent = transform.parent.GetComponent<CircuitComponent>();
 
-        if(this.gameObject.name == "Port1")
+        switch (this.gameObject.name)
         {
-            portNumber = 1;
-        }
-        else
-        {
-            portNumber = 2;
+            case "Port1":
+                portNumber = 1;
+                break;
+            case "Port2":
+                portNumber = 2;
+                break;
+            case "Unique":
+                portNumber = 3;
+                break;
         }
     }
 

@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\ElectricCircuitScene\Objects\EDSButton.cs" />
     <Compile Include="Assets\Scripts\ElectricCircuitScene\Objects\Outline.cs" />
     <Compile Include="Assets\Scripts\ElectricCircuitScene\UI\NPanel.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\ElectricCircuit\ElectricComponents\Point.cs" />
     <Compile Include="Assets\Scripts\ElectricCircuitScene\UI\Panel.cs" />
     <Compile Include="Assets\Scripts\MagneticFieldScene\Managers\ElectricChargeManager.cs" />
     <Compile Include="Assets\Scripts\ElectricCircuitScene\Objects\DemoObject.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\Scripts\ElectricCircuitScene\Managers\ElectricCircuit\CircuitManager.cs" />
     <Compile Include="Assets\Scripts\ElectricCircuitScene\Managers\Canvas\CanvasManager.cs" />
     <Compile Include="Assets\Scripts\ElectricCircuitScene\Managers\ElectricCircuit\LineManager.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Objects\ColorChanger.cs" />
     <Compile Include="Assets\Scripts\ElectricCircuitScene\Player\ChangeObjectInformation.cs" />
     <Compile Include="Assets\Scripts\MagneticFieldScene\Managers\ChargeForceManager.cs" />
     <Compile Include="Assets\Scripts\ElectricCircuitScene\ElectricCircuit\ElectricComponents\VoltageSource.cs" />

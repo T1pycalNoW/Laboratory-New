@@ -2,12 +2,24 @@ using UnityEngine;
 
 public class CanvasManager : MonoBehaviour
 {
+    public static CanvasManager Instance;
+
     [Header("Canvas Elements")]
     [SerializeField] private GameObject nPanel;
     [SerializeField] private GameObject bPanel;
 
     private bool nPanelIsOpen;
+    public bool NPanelIsOpen
+    {
+        get => nPanelIsOpen;
+    }
+    
     private bool bPanelIsOpen;
+
+    private void Awake ()
+    {
+        Instance = this;
+    }
 
     private void Update()
     {

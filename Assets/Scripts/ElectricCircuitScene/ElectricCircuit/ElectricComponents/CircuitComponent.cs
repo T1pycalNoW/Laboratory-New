@@ -66,6 +66,14 @@ public abstract class CircuitComponent : MonoBehaviour
 
     private void Start ()
     {
+        if(this.gameObject.name == "Point")
+        {
+            Port _port = transform.GetChild(0).GetComponent<Port>();
+            InitPorts(_port.ID, _port.ID);
+
+            return;
+        }
+
         Port _port1 = transform.GetChild(1).GetComponent<Port>();
         Port _port2 = transform.GetChild(2).GetComponent<Port>();
 
@@ -102,7 +110,7 @@ public abstract class CircuitComponent : MonoBehaviour
         get => specialCode;
     }
 
-    private void UpdateCode ()
+    public void UpdateCode ()
     {
         string newcode = "";
 
@@ -147,4 +155,5 @@ public enum ElectricCircuitCompType
 {
     VoltageSource, // Источник ЭДС
     Resistor, // Резистор
+    Point, // Проводник
 }

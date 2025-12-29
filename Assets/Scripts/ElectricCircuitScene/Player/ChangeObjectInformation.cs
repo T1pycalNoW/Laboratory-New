@@ -36,15 +36,19 @@ public class ChangeObjectInformation : MonoBehaviour
 
             if (clickObject != null)
             {
-                if(curComp)
+                if (curComp)
                 {
                     StopMoving();
                 }
 
                 CircuitComponent circComp = clickObject.GetComponent<CircuitComponent>();
+                ColorChanger cc = clickObject.GetComponent<ColorChanger>();
+
                 curComp = circComp;
+                cc.ChangeMaterial(circComp.transform, "Purple");
 
                 componentName.text = circComp.ComponentType.ToString();
+                inputField.text = "";
             }
         }
 
@@ -55,7 +59,7 @@ public class ChangeObjectInformation : MonoBehaviour
                 StartMoving();
             }
 
-            if(isMoving && Input.GetKeyDown(KeyCode.Escape))
+            if (isMoving && Input.GetKeyDown(KeyCode.Escape))
             {
                 StopMoving();
             }
@@ -92,6 +96,7 @@ public class ChangeObjectInformation : MonoBehaviour
         if (float.TryParse(newText, out float newValue))
         {
             curComp.componentCount = newValue;
+            curComp.UpdateCode();
         }
     }
 
@@ -112,18 +117,30 @@ public class ChangeObjectInformation : MonoBehaviour
 
     public void StopMoving()
     {
-        if(curComp == null || !isMoving) return;
+        if (curComp == null) return;
 
-        MoveObject mo = curComp.GetComponent<MoveObject>();
-        mo.ChangeMaterial(mo.transform, "White");
+        ColorChanger cc = curComp.GetComponent<ColorChanger>();
+
+        cc.ChangeMaterial(cc.transform, "White");
         isMoving = false;
 
-        if (!mo.CanPlace())
+        MoveObject mo = curComp.GetComponent<MoveObject>();
+
+        if(mo)
         {
-            mo.ReturnToStartPosition();
+            if (!mo.CanPlace())
+            {
+                mo.ReturnToStartPosition();
+            }
+
+            Destroy(mo);
+
+            if(CanvasManager.Instance.NPanelIsOpen)
+            {
+                cc.ChangeMaterial(cc.transform, "Purple");
+            }
         }
 
-        Destroy(mo);
         curComp.GetComponent<Collider>().isTrigger = false;
     }
 }

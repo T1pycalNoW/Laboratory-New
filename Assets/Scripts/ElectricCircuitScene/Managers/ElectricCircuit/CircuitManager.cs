@@ -248,7 +248,7 @@ public class Circuit
             {
                 if (convertedCodes[x].ID != convertedCodes[y].ID)
                 {
-                    // Debug.Log("1 check passed");
+                    Debug.Log("1 check passed");
                     if (convertedCodes[x].Count != 0 && convertedCodes[y].Count != 0)
                     {
                         if(!FindParallelConnection(convertedCodes[x], convertedCodes[y]))
@@ -335,9 +335,11 @@ public class Circuit
     // При нахождении последовательного соединения
     private bool FindNextConnection(CountComp x, CountComp y)
     {
+        Debug.Log($"Проверка элементов: {x.ID}, {y.ID}. 2 порт {x.ID} элемента: {x.ConToPort2[0]}, 1 порт {y.ID} элемента: {y.Port1}");
+
         if (x.ConToPort2.Count == 1 && y.ConToPort1.Count == 1)
         {
-            if (x.ConToPort2[0] == y.Port1)
+            if ((x.ConToPort2[0] == y.Port1) || (x.ConToPort2[0] == y.ConToPort1[0]))
             {
                 Debug.Log("Next connection founded");
 
