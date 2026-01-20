@@ -15,7 +15,7 @@ public abstract class CircuitComponent : MonoBehaviour
     #region Port
 
     [Header("Ports Settings")]
-    private int port1;
+    protected int port1;
     public int Port1
     {
         get => port1;
@@ -144,7 +144,11 @@ public abstract class CircuitComponent : MonoBehaviour
                 newcode += ",";
             }
         }
+        
+        newcode += ":";
 
+        newcode += ComponentType.ToString();
+    
         specialCode = newcode;
     }
 
@@ -156,4 +160,5 @@ public enum ElectricCircuitCompType
     VoltageSource, // Источник ЭДС
     Resistor, // Резистор
     Point, // Проводник
+    Ammeter, // Амперметр
 }

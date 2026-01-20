@@ -20,11 +20,11 @@ public class CircuitManager : MonoBehaviour
         Instance = this;
     }
 
-    public void StartCircuitByEDC (CircuitComponent EDC)
+    public void StartCircuitByEDC(CircuitComponent EDC)
     {
         foreach (var i in AllCircuits)
         {
-            if(i.ComponentList.Contains(EDC))
+            if (i.ComponentList.Contains(EDC))
             {
                 i.StartCircuit();
             }
@@ -146,12 +146,14 @@ public class Circuit
     public string Name { get; }
     public int ID { get; }
     [SerializeField] private List<CircuitComponent> componentList = new();
+
     public List<CircuitComponent> ComponentList
     {
         get => componentList;
     }
 
     [SerializeField] private List<CountComp> convertedCodes = new();
+
     public List<CountComp> ConvertedCodes
     {
         get => convertedCodes;
@@ -207,21 +209,30 @@ public class Circuit
                 return;
             }
 
-            while(true)
+            while (true)
             {
                 bool state = FindElementsThatCanBeRemoved();
-                
-                if(!state)
+
+                if (!state)
                 {
                     break;
                 }
             }
 
+            if (convertedCodes.Count > 1)
+            {
+                throw new Exception("Cannot slice all circuit");
+            }
+
             Debug.Log($"Общее сопротивление цепи: {convertedCodes[0].Count}.");
+
+            float allAmperageCount = allVoltageCircuits[0].componentCount / convertedCodes[0].Count;
+
+            allVoltageCircuits[0].transform.GetChild((1)).GetComponent<Port>()
+                .StartCountingAmperStrength(allAmperageCount);
         }
         else
         {
-
         }
     }
 
@@ -248,20 +259,16 @@ public class Circuit
             {
                 if (convertedCodes[x].ID != convertedCodes[y].ID)
                 {
-                    Debug.Log("1 check passed");
-                    if (convertedCodes[x].Count != 0 && convertedCodes[y].Count != 0)
+                    if (!FindParallelConnection(convertedCodes[x], convertedCodes[y]))
                     {
-                        if(!FindParallelConnection(convertedCodes[x], convertedCodes[y]))
-                        {
-                            if(FindNextConnection(convertedCodes[x], convertedCodes[y]))
-                            {
-                                return true;
-                            }
-                        }
-                        else
+                        if (FindNextConnection(convertedCodes[x], convertedCodes[y]))
                         {
                             return true;
                         }
+                    }
+                    else
+                    {
+                        return true;
                     }
                 }
             }
@@ -310,17 +317,17 @@ public class Circuit
 
                 double answer = Math.Round(1 / sum, 2);
 
-                CountComp newComp = new(x.Port1, x.Port2, (float)answer, x.ConToPort1, x.ConToPort2);
+                CountComp newComp = new(ElectricCircuitCompType.Resistor, x.Port1, x.Port2, (float)answer, x.ConToPort1, x.ConToPort2);
 
                 foreach (var l in allParallelConnections)
                 {
-                    if(l.ID != x.ID)
+                    if (l.ID != x.ID)
                     {
                         ClearAllPortData(l.Port1);
                         ClearAllPortData(l.Port2);
-                    }                  
+                    }
 
-                    convertedCodes.Remove(l);   
+                    convertedCodes.Remove(l);
                 }
 
                 convertedCodes.Add(newComp);
@@ -335,8 +342,13 @@ public class Circuit
     // При нахождении последовательного соединения
     private bool FindNextConnection(CountComp x, CountComp y)
     {
-        Debug.Log($"Проверка элементов: {x.ID}, {y.ID}. 2 порт {x.ID} элемента: {x.ConToPort2[0]}, 1 порт {y.ID} элемента: {y.Port1}");
-
+        Debug.Log(
+            $"Проверка элементов: {x.ID}, {y.ID}. 2 порт {x.ID} элемента: {x.ConToPort2[0]}, 1 порт {y.ID} элемента: {y.Port1}");
+        if (x.Count == 0 && y.Count == 0)
+        {
+            throw new Exception("Both components do not have any value");
+        }
+        
         if (x.ConToPort2.Count == 1 && y.ConToPort1.Count == 1)
         {
             if ((x.ConToPort2[0] == y.Port1) || (x.ConToPort2[0] == y.ConToPort1[0]))
@@ -345,7 +357,7 @@ public class Circuit
 
                 double answer = x.Count + y.Count;
 
-                CountComp newComp = new(x.Port1, y.Port2, (float)answer, x.ConToPort1, y.ConToPort2);
+                CountComp newComp = new(ElectricCircuitCompType.Resistor, x.Port1, y.Port2, (float)answer, x.ConToPort1, y.ConToPort2);
 
                 convertedCodes.Remove(x);
                 convertedCodes.Remove(y);
@@ -376,7 +388,7 @@ public class Circuit
     }
 
     /*
-    Метод разбивает специальные коды каждого компонента, добавленного в сеть, на отдельные элементы и записывает их в массив особого класса, 
+    Метод разбивает специальные коды каждого компонента, добавленного в сеть, на отдельные элементы и записывает их в массив особого класса,
     который эти элементы и хранит. Это нужно для последующих вычислений
     */
 
@@ -389,7 +401,8 @@ public class Circuit
 
         foreach (var i in componentList)
         {
-            if (i.ComponentType == ElectricCircuitCompType.Resistor)
+            if (i.ComponentType == ElectricCircuitCompType.Resistor ||
+                i.ComponentType == ElectricCircuitCompType.Ammeter)
             {
                 allCircuitComponentCodes.Add(i.SpecialCode);
             }
@@ -456,7 +469,31 @@ public class Circuit
                 }
             }
 
-            CountComp newCountComp = new(p1, p2, c, c1, c2);
+            string componentType = "";
+
+            for (int i = 0; i < curStr[4].Length; i++)
+            {
+                componentType += curStr[4][i];
+            }
+
+            ElectricCircuitCompType compType;
+            
+            Debug.Log(componentType);
+
+            switch (componentType)
+            {
+                case "Resistor":
+                    compType = ElectricCircuitCompType.Resistor;
+                    break;
+                case "Ammeter":
+                    compType = ElectricCircuitCompType.Ammeter;
+                    break;
+                default:
+                    Debug.Log("Did not found");
+                    continue;
+            }
+
+            CountComp newCountComp = new(compType, p1, p2, c, c1, c2);
             convertedCodes.Add(newCountComp);
 
             Debug.Log($"Added new code: port1 = {p1}, port2 = {p2}");
@@ -476,46 +513,60 @@ public class CountComp
     private static int counter = 1;
 
     [SerializeField] private int id;
+
     public int ID
     {
         get => id;
     }
+    
+    [SerializeField] private ElectricCircuitCompType type;
+
+    public ElectricCircuitCompType Type
+    {
+        get => type;
+    }
 
     [SerializeField] private int port1;
+
     public int Port1
     {
         get => port1;
     }
 
     [SerializeField] private int port2;
+
     public int Port2
     {
         get => port2;
     }
 
     [SerializeField] private float count;
+
     public float Count
     {
         get => count;
     }
 
     [SerializeField] private List<int> conToPort1 = new();
+
     public List<int> ConToPort1
     {
         get => conToPort1;
     }
 
     [SerializeField] private List<int> conToPort2 = new();
+
     public List<int> ConToPort2
     {
         get => conToPort2;
     }
 
-    public CountComp(int _port1, int _port2, float _count, List<int> _conToPort1, List<int> _conToPort2)
+    public CountComp(ElectricCircuitCompType _type, int _port1, int _port2, float _count, List<int> _conToPort1, List<int> _conToPort2)
     {
         id = counter;
         counter++;
 
+        type = _type;
         port1 = _port1;
         port2 = _port2;
         count = _count;

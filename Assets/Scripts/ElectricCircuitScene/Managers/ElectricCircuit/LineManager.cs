@@ -100,7 +100,7 @@ public class LineManager : MonoBehaviour
         CircuitComponent parent2 = endPoint.transform.parent.parent.gameObject.GetComponent<CircuitComponent>();
 
         Port secondPort = obj2.GetComponent<Port>();
-
+        
         firstPort.AddNewPort(secondPort.ID);
         secondPort.AddNewPort(firstPort.ID);
         

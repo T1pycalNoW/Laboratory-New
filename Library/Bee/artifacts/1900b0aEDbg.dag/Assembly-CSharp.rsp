@@ -370,6 +370,7 @@
 "Assets/Scripts/ElectricCircuitScene/Objects/IInteractable.cs"
 "Assets/Scripts/ElectricCircuitScene/Objects/MoveObject.cs"
 "Assets/Scripts/ElectricCircuitScene/Objects/Outline.cs"
+"Assets/Scripts/ElectricCircuitScene/Objects/PortManager.cs"
 "Assets/Scripts/ElectricCircuitScene/Player/CameraController.cs"
 "Assets/Scripts/ElectricCircuitScene/Player/ChangeObjectInformation.cs"
 "Assets/Scripts/ElectricCircuitScene/Player/MouseRaycast.cs"
