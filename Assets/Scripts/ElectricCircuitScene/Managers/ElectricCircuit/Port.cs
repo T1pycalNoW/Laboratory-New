@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 using GogoGaga.OptimizedRopesAndCables;
+using System.Collections;
 
 public class Port : MonoBehaviour, IInteractable
 {
@@ -77,6 +78,18 @@ public class Port : MonoBehaviour, IInteractable
 
     public void StartCountingAmperStrength(float ammerStrength)
     {
+        StartCoroutine(StartCounting(ammerStrength));
+    }
+
+    public IEnumerator StartCounting (float ammerStrength)
+    {
+        if (PortTracker.Instance.CheckPort(this) || PortTracker.Instance.CheckAmmeterNum())
+        {
+            yield break;
+        }
+
+        PortTracker.Instance.AddNewPort(this);
+
         Debug.Log("Start Counting Amperage");
         
         Port oppositePort = transform.parent.GetComponent<PortManager>().GetOppositePort(this);
@@ -85,7 +98,7 @@ public class Port : MonoBehaviour, IInteractable
 
         if (oppositePort.AmperageCount == 0f)
         {
-            oppositePort.ContinueCountingAmperStrength(ammerStrength);
+            yield return StartCoroutine(oppositePort.ContinueCountingAmperStrength(ammerStrength));
 
             oppositePort.amperageCount = ammerStrength;
         }
@@ -95,21 +108,43 @@ public class Port : MonoBehaviour, IInteractable
         }
     }
 
-    public void ContinueCountingAmperStrength(float ammerStrength)
+    public IEnumerator ContinueCountingAmperStrength(float ammerStrength)
     {
+        if (PortTracker.Instance.CheckPort(this) || PortTracker.Instance.CheckAmmeterNum())
+        {
+            Debug.Log("Quitting...");
+            yield break;
+        }
+
+        PortTracker.Instance.AddNewPort(this);
+
+        ammerStrength = (float)Math.Round(ammerStrength, 2);
+
         Debug.Log("Continue Counting Amperage");
+        Debug.Log(this.ID);
+        Debug.Log(ammerStrength);
+
+        if (this.transform.parent.TryGetComponent(out Ammeter ammeterComp))
+        {
+            ammeterComp.UpdateAmperageCount();
+        }
         
-        List<Resistor> resistors = new List<Resistor>();
+        List<CircuitComponent> resistors = new List<CircuitComponent>();
         
         List<CountResistor> countResistors = new List<CountResistor>();
         List<float> countAmperages = new List<float>();
+
+        if (connectedLines.Count == 0)
+        {
+            throw new Exception("Did not found any Lines");
+        }
         
         foreach (Rope rope in connectedLines)
         {
             Transform port1 =  rope.StartPoint.parent;
             Transform port2 = rope.EndPoint.parent;
 
-            if (port1 != null && port2 != null)
+            if (!port1 || !port2)
             {
                 throw new System.Exception("Ports are not found");
             }
@@ -124,20 +159,33 @@ public class Port : MonoBehaviour, IInteractable
             
                 countResistors.Add(newCountResistor);
             }
-            else if (oppositePort.parent.TryGetComponent<Resistor>(out Ammeter ammeter))
+            else if (oppositePort.parent.TryGetComponent<Ammeter>(out Ammeter ammeter))
             {
-                resistors.Add(resistor).Add(ammerStrength);
+                resistors.Add(ammeter);
+                
+                CountResistor newCountResistor = new(ammeter.componentCount, ammeter, oppositePort.GetComponent<Port>());
+            
+                countResistors.Add(newCountResistor);
+
+                ammeter.UpdateAmperageCount();
             }
             else
             {
-                throw new System.Exception("Did not found Resistor or Ammeter"); 
+                Debug.Log("Did not found Resistor or Ammeter"); 
             }
         }
 
         if (resistors.Count == 1)
         {
+            Debug.Log("Only one");
+            
             countResistors[0].EnterPort.StartCountingAmperStrength(ammerStrength);
+
+            yield break;
         }
+        
+        Debug.Log($"Отладка: параллельное соединение. Найдено резисторов (включая амперметры) - {resistors.Count}, " +
+                  $"переведено в расчетную систему - {countResistors.Count}.");
 
         foreach (var resistor in countResistors)
         {
@@ -152,7 +200,7 @@ public class Port : MonoBehaviour, IInteractable
                 otherResistorSum += other.ResistorCount;
             }
             
-            newNnAmperValue = (resistor.ResistorCount / otherResistorSum) * ammerStrength;
+            newNnAmperValue = (float)Math.Round(resistor.ResistorCount / otherResistorSum * ammerStrength, 2);
             
             countAmperages.Add(newNnAmperValue);
         }
@@ -160,9 +208,23 @@ public class Port : MonoBehaviour, IInteractable
         countResistors.Sort((x, y) => y.ResistorCount.CompareTo(y.ResistorCount)); // Сортировка по возрастанию
         countAmperages.Sort();
 
+        yield return null;
+
+        Coroutine[] coroutines = new Coroutine[countResistors.Count];
         for (int i = 0; i < countResistors.Count; i++)
         {
-            countResistors[i].EnterPort.StartCountingAmperStrength(countAmperages[i]);
+            if (PortTracker.Instance.CheckAmmeterNum()) yield break;
+
+            Debug.Log($"Итерация №{i}");
+            
+            Debug.Log($"Порту {countResistors[i].EnterPort.ID} присвоено значение - {countAmperages[i]}");
+            
+            coroutines[i] = StartCoroutine(countResistors[i].EnterPort.StartCounting(countAmperages[i]));
+        }
+
+        foreach (var coroutine in coroutines)
+        {
+            yield return coroutine;
         }
 
         if (countResistors.Count == 0)
@@ -180,9 +242,9 @@ public class Port : MonoBehaviour, IInteractable
             get => resistorCount;
         }
 
-        private Resistor resistorObject;
+        private CircuitComponent resistorObject;
 
-        public Resistor ResistorObject
+        public CircuitComponent ResistorObject
         {
             get => resistorObject;
         }
@@ -194,7 +256,7 @@ public class Port : MonoBehaviour, IInteractable
             get => enterPort;
         }
 
-        public CountResistor(float _resistorCount, Resistor _resistorObject, Port _enterPort)
+        public CountResistor(float _resistorCount, CircuitComponent _resistorObject, Port _enterPort)
         {
             resistorCount = _resistorCount;
             resistorObject = _resistorObject;

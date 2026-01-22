@@ -15,7 +15,7 @@ D:/GitHub Projects/Laboratory-New
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53971
+60180
 Successfully changed project path to: D:/GitHub Projects/Laboratory-New
 D:/GitHub Projects/Laboratory-New
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ D:/GitHub Projects/Laboratory-New
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [21024] Host "[IP] 26.76.100.14 [Port] 0 [Flags] 2 [Guid] 2511177458 [EditorId] 2511177458 [Version] 1048832 [Id] WindowsEditor(7,LaptopNoW) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [21612] Host "[IP] 26.76.100.14 [Port] 0 [Flags] 2 [Guid] 2096309351 [EditorId] 2096309351 [Version] 1048832 [Id] WindowsEditor(7,LaptopNoW) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [21024] Host "[IP] 26.76.100.14 [Port] 0 [Flags] 2 [Guid] 2511177458 [EditorId] 2511177458 [Version] 1048832 [Id] WindowsEditor(7,LaptopNoW) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [21612] Host "[IP] 26.76.100.14 [Port] 0 [Flags] 2 [Guid] 2096309351 [EditorId] 2096309351 [Version] 1048832 [Id] WindowsEditor(7,LaptopNoW) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
-Refreshing native plugins compatible for Editor in 4.27 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 6.42 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.31f1 (4ede2d13e8b4)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.31f1/Editor/Data/Resources/UnitySubsystems
@@ -70,46 +70,46 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.31f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.31f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.31f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56520
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56116
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.31f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.31f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007718 seconds.
-- Loaded All Assemblies, in  0.425 seconds
+Registered in 0.005958 seconds.
+- Loaded All Assemblies, in  0.445 seconds
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.379 seconds
-Domain Reload Profiling: 804ms
-	BeginReloadAssembly (123ms)
+- Finished resetting the current domain, in  0.375 seconds
+Domain Reload Profiling: 818ms
+	BeginReloadAssembly (150ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (40ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (70ms)
-	LoadAllAssembliesAndSetupDomain (179ms)
-		LoadAssemblies (122ms)
+	RebuildCommonClasses (41ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (69ms)
+	LoadAllAssembliesAndSetupDomain (172ms)
+		LoadAssemblies (142ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (176ms)
-			TypeCache.Refresh (174ms)
-				TypeCache.ScanAssembly (158ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
+		AnalyzeDomain (169ms)
+			TypeCache.Refresh (167ms)
+				TypeCache.ScanAssembly (150ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (380ms)
+	FinalizeReload (376ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (293ms)
+		SetupLoadedEditorAssemblies (290ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (14ms)
-			SetLoadedEditorAssemblies (9ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (8ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (204ms)
-			ProcessInitializeOnLoadMethodAttributes (63ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (199ms)
+			ProcessInitializeOnLoadMethodAttributes (65ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -117,52 +117,52 @@ Domain Reload Profiling: 804ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.192 seconds
-Refreshing native plugins compatible for Editor in 3.03 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.788 seconds
+Refreshing native plugins compatible for Editor in 1.63 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.978 seconds
-Domain Reload Profiling: 2168ms
-	BeginReloadAssembly (246ms)
+- Finished resetting the current domain, in  0.839 seconds
+Domain Reload Profiling: 1626ms
+	BeginReloadAssembly (187ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (11ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (38ms)
-	RebuildCommonClasses (51ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (64ms)
-	LoadAllAssembliesAndSetupDomain (813ms)
-		LoadAssemblies (648ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (40ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (498ms)
+		LoadAssemblies (393ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (296ms)
-			TypeCache.Refresh (252ms)
-				TypeCache.ScanAssembly (232ms)
-			ScanForSourceGeneratedMonoScriptInfo (28ms)
-			ResolveRequiredComponents (12ms)
-	FinalizeReload (978ms)
+		AnalyzeDomain (209ms)
+			TypeCache.Refresh (182ms)
+				TypeCache.ScanAssembly (165ms)
+			ScanForSourceGeneratedMonoScriptInfo (19ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (839ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (741ms)
+		SetupLoadedEditorAssemblies (646ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (17ms)
-			SetLoadedEditorAssemblies (7ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (135ms)
-			ProcessInitializeOnLoadAttributes (544ms)
+			BeforeProcessingInitializeOnLoad (105ms)
+			ProcessInitializeOnLoadAttributes (488ms)
 			ProcessInitializeOnLoadMethodAttributes (31ms)
-			AfterProcessingInitializeOnLoad (7ms)
+			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (10ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 1.92 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (6ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 3.71 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3281 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (57.9 KB). Loaded Objects now: 3755.
-Memory consumption went from 131.6 MB to 131.6 MB.
-Total: 3.581300 ms (FindLiveObjects: 0.241600 ms CreateObjectMapping: 0.115100 ms MarkObjects: 3.095300 ms  DeleteObjects: 0.127800 ms)
+Unloading 35 unused Assets / (58.4 KB). Loaded Objects now: 3755.
+Memory consumption went from 131.7 MB to 131.6 MB.
+Total: 4.335400 ms (FindLiveObjects: 0.221300 ms CreateObjectMapping: 0.150700 ms MarkObjects: 3.812100 ms  DeleteObjects: 0.149800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -179,66 +179,610 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.077 seconds
-Refreshing native plugins compatible for Editor in 8.56 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.733 seconds
-Domain Reload Profiling: 3805ms
-	BeginReloadAssembly (302ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (12ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (59ms)
-	RebuildCommonClasses (77ms)
-	RebuildNativeTypeToScriptingClass (27ms)
-	initialDomainReloadingComplete (78ms)
-	LoadAllAssembliesAndSetupDomain (586ms)
-		LoadAssemblies (699ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (62ms)
-			TypeCache.Refresh (19ms)
-				TypeCache.ScanAssembly (1ms)
-			ScanForSourceGeneratedMonoScriptInfo (17ms)
-			ResolveRequiredComponents (21ms)
-	FinalizeReload (2734ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1384ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (22ms)
-			SetLoadedEditorAssemblies (13ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (243ms)
-			ProcessInitializeOnLoadAttributes (1022ms)
-			ProcessInitializeOnLoadMethodAttributes (65ms)
-			AfterProcessingInitializeOnLoad (18ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (22ms)
-Refreshing native plugins compatible for Editor in 5.81 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3261 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 26 unused Assets / (31.7 KB). Loaded Objects now: 3758.
-Memory consumption went from 127.6 MB to 127.6 MB.
-Total: 6.130700 ms (FindLiveObjects: 0.416000 ms CreateObjectMapping: 0.251100 ms MarkObjects: 5.382800 ms  DeleteObjects: 0.079200 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 548277.538906 seconds.
+  path: Assets/Scripts/ElectricCircuitScene/Managers/ElectricCircuit/Port.cs
+  artifactKey: Guid(174f31f870a743b499bd62163da9bf41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ElectricCircuitScene/Managers/ElectricCircuit/Port.cs using Guid(174f31f870a743b499bd62163da9bf41) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '7e94fcca1fa9a4ef09bd595fcf34df09') in 0.004244 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 9.038731 seconds.
+  path: Assets/IMG/Ammeter.png
+  artifactKey: Guid(d4f48561b9aa33d47a1c307fe0fb9406) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/IMG/Ammeter.png using Guid(d4f48561b9aa33d47a1c307fe0fb9406) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'd11e751aa07f24a7abddd13f4b847d5d') in 0.208161 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
+  artifactKey: Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat using Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'e274b93837bbc7dc72d353c4f1aef275') in 0.050272 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/Anim/ElectricCircuitScene/CanvasElements/NPanel/ClosePanel.anim
+  artifactKey: Guid(96b08c96e827a2c43a19258d209407b4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Anim/ElectricCircuitScene/CanvasElements/NPanel/ClosePanel.anim using Guid(96b08c96e827a2c43a19258d209407b4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '5d908dafa8fa75025ce7bbd206798ea5') in 0.031468 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMPro.cginc
+  artifactKey: Guid(407bc68d299748449bbf7f48ee690f8d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TextMesh Pro/Shaders/TMPro.cginc using Guid(407bc68d299748449bbf7f48ee690f8d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '9fcb39afdfac7c4481506baae9fa9dc4') in 0.014735 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader
+  artifactKey: Guid(a02a7d8c237544f1962732b55a9aebf1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader using Guid(a02a7d8c237544f1962732b55a9aebf1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '593f5c1775032539fe2a7eb70328e91b') in 0.015901 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Prefab/ElectricCircuitScene/BuildObjects/EMFDemo.prefab
+  artifactKey: Guid(5f1aed2ade1373447b0d318c82d81912) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Prefab/ElectricCircuitScene/BuildObjects/EMFDemo.prefab using Guid(5f1aed2ade1373447b0d318c82d81912) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'e48031a4d3e1321872cb622573788a35') in 0.065880 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 57
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Prefab/ElectricCircuitScene/EmptyObject.prefab
+  artifactKey: Guid(e6e56b3e13608ee4eb79ad78c5cfbf03) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Prefab/ElectricCircuitScene/EmptyObject.prefab using Guid(e6e56b3e13608ee4eb79ad78c5cfbf03) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '13b9ff4f6333b3983da8a3d39e75a8e4') in 0.012450 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Anim/MagneticFieldScene/Torus.controller
+  artifactKey: Guid(b8ff8dee958e8264c8cb108c777bdfa2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Anim/MagneticFieldScene/Torus.controller using Guid(b8ff8dee958e8264c8cb108c777bdfa2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'da05a93bcc1e22e28f5fc35d4c2b3e5c') in 0.016332 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000075 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Script/RopeWindEffect.cs
+  artifactKey: Guid(36bb784470883a244898108cda33580f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Script/RopeWindEffect.cs using Guid(36bb784470883a244898108cda33580f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '5e203793e929e4971fdbd0f256535cbf') in 0.008818 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Script/RopeMesh.cs
+  artifactKey: Guid(5702366e18c47ef469ba2903e5846489) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Script/RopeMesh.cs using Guid(5702366e18c47ef469ba2903e5846489) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '4dc7cb46e7a9369814d8c81b50cd718f') in 0.008264 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/Materials/ElectricCircuitScene/BuildMaterials/BuildMaterialTrue.mat
+  artifactKey: Guid(6dea785edc540b94988b7af1112860e3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Materials/ElectricCircuitScene/BuildMaterials/BuildMaterialTrue.mat using Guid(6dea785edc540b94988b7af1112860e3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '786b1acf19f93be2097d64bea83a236e') in 0.016617 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Prefab/ElectricCircuitScene/BlenderObjects/ammeter.fbx
+  artifactKey: Guid(92e35ff7f0b26044f9545233f8326a04) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Prefab/ElectricCircuitScene/BlenderObjects/ammeter.fbx using Guid(92e35ff7f0b26044f9545233f8326a04) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'd259629645204e91626ee13d98f3f5cd') in 0.071104 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Scripts/ElectricCircuitScene/Objects/MoveObject.cs
+  artifactKey: Guid(cd7213835697df64fb07471cac69e1e2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/ElectricCircuitScene/Objects/MoveObject.cs using Guid(cd7213835697df64fb07471cac69e1e2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'e4dad9e5f3ff57d0c0378ae384b027de') in 0.005398 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Prefab/ElectricCircuitScene/StartPoint.prefab
+  artifactKey: Guid(fce7351ddf5153743b97579c8564cb47) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Prefab/ElectricCircuitScene/StartPoint.prefab using Guid(fce7351ddf5153743b97579c8564cb47) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '7be9a8d43862bd58afb775fba8fe136f') in 0.034856 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Scripts/ElectricCircuitScene/UI/Panel.cs
+  artifactKey: Guid(6006045c101c015439aaa3e612d98006) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/ElectricCircuitScene/UI/Panel.cs using Guid(6006045c101c015439aaa3e612d98006) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'cf3861588b8dac2d23b39bdbbdc478ac') in 0.006728 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000105 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_Sprite.shader
+  artifactKey: Guid(cf81c85f95fe47e1a27f6ae460cf182c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TextMesh Pro/Shaders/TMP_Sprite.shader using Guid(cf81c85f95fe47e1a27f6ae460cf182c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'fcd252661665d4985b0921a8c0985dbf') in 0.009266 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Headphone.mat
+  artifactKey: Guid(70760f964498e7c47bdecb73bef839ff) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Headphone.mat using Guid(70760f964498e7c47bdecb73bef839ff) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '95832054562a9a5a07056ca6ff30708b') in 0.013886 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Model/Headphones.fbx
+  artifactKey: Guid(f12ab77ac26057040b464f75751be285) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Model/Headphones.fbx using Guid(f12ab77ac26057040b464f75751be285) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'de45edc22debdb991d3ae64d264d05db') in 0.034684 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000073 seconds.
+  path: Assets/Scripts/ElectricCircuitScene/Managers/ElectricCircuit/ObjectManager.cs
+  artifactKey: Guid(528fe293ecdd8a5469bbb49fce406978) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/ElectricCircuitScene/Managers/ElectricCircuit/ObjectManager.cs using Guid(528fe293ecdd8a5469bbb49fce406978) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '0e7bea79cf884e02fcc50fbe2dbf1fea') in 0.006907 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Prefab/Computer.prefab
+  artifactKey: Guid(2e402bba5b7f6a04cb26e4ac9842f09b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Prefab/Computer.prefab using Guid(2e402bba5b7f6a04cb26e4ac9842f09b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'd1e94d907933da3ceab653ea82218706') in 0.026780 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 289
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Ground.mat
+  artifactKey: Guid(3b9b7bc5f0e12974a92f8eaf4a26ab69) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Ground.mat using Guid(3b9b7bc5f0e12974a92f8eaf4a26ab69) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '0f085855a7cd6e0f225ef753dc85cd26') in 0.016620 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Scripts/ElectricCircuitScene/Managers/ElectricCircuit/CircuitManager.cs
+  artifactKey: Guid(4842ca2f0192982498e5570475190b61) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/ElectricCircuitScene/Managers/ElectricCircuit/CircuitManager.cs using Guid(4842ca2f0192982498e5570475190b61) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'd14267d261559e17c9c89a4c0e2a87da') in 0.005733 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Scripts/ElectricCircuitScene/Managers/ElectricCircuit/LineManager.cs
+  artifactKey: Guid(7622db5f4c3bd9443bc5c46dc4935b01) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/ElectricCircuitScene/Managers/ElectricCircuit/LineManager.cs using Guid(7622db5f4c3bd9443bc5c46dc4935b01) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'f3b472c67c320326645572fcf157cf5c') in 0.008910 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Prefab/TelephonePole Variant.prefab
+  artifactKey: Guid(59b5f472ed164db4bb6487d0375d11fb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Prefab/TelephonePole Variant.prefab using Guid(59b5f472ed164db4bb6487d0375d11fb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '08882be3af94749196fd5003971b0b74') in 0.025105 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 41
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scenes/MagneticFieldScene.unity
+  artifactKey: Guid(5e12f73d84e1a014da3fe0635bceaad2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scenes/MagneticFieldScene.unity using Guid(5e12f73d84e1a014da3fe0635bceaad2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'f0dded33fd7b4e543c9dfdd5d2443101') in 0.009547 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Scripts/ElectricCircuitScene/Managers/ElectricCircuit/Port.cs
+  artifactKey: Guid(174f31f870a743b499bd62163da9bf41) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/ElectricCircuitScene/Managers/ElectricCircuit/Port.cs using Guid(174f31f870a743b499bd62163da9bf41) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '9ecd1d823623911a6a896ef5b3e62feb') in 0.006933 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Scripts/ElectricCircuitScene/Objects/EDSButton.cs
+  artifactKey: Guid(7ff12e26207b56544835fd1062984d43) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/ElectricCircuitScene/Objects/EDSButton.cs using Guid(7ff12e26207b56544835fd1062984d43) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '68c746f4f7a9f93e99367e57182987be') in 0.006620 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Pole 1.mat
+  artifactKey: Guid(4e2a33eedb1d3194ebcd7937fb1d9d80) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Pole 1.mat using Guid(4e2a33eedb1d3194ebcd7937fb1d9d80) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '8f60dda0270acbe11c8f6be0a5e86116') in 0.013588 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Materials/ElectricCircuitScene/ObjectMaterials/Plane.mat
+  artifactKey: Guid(9b7ebdb9498c8a94dbe83422fd377163) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Materials/ElectricCircuitScene/ObjectMaterials/Plane.mat using Guid(9b7ebdb9498c8a94dbe83422fd377163) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '51bb3299462fd61f800f109397a14a32') in 0.009473 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
+  artifactKey: Guid(79459efec17a4d00a321bdcc27bbc385) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat using Guid(79459efec17a4d00a321bdcc27bbc385) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '8f54d0c83fa3ecc5da9a68bbd17e7823') in 0.026617 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Materials/MagneticFieldScene/Neuron.mat
+  artifactKey: Guid(570060ff83921dc4fa8f4abd03716c87) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Materials/MagneticFieldScene/Neuron.mat using Guid(570060ff83921dc4fa8f4abd03716c87) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'b8222d37b98cbc6e56c0137b5b8e3bdf') in 0.010859 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+  artifactKey: Guid(e3265ab4bf004d28a9537516768c1c75) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TextMesh Pro/Fonts/LiberationSans.ttf using Guid(e3265ab4bf004d28a9537516768c1c75) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '6a0a4bd62a0b2e7e60a839fe2e1f6f40') in 0.026949 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Third-Party Notices.txt
+  artifactKey: Guid(84b5b654fb74331458f0df693edeabda) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Third-Party Notices.txt using Guid(84b5b654fb74331458f0df693edeabda) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '076c16202ce956e62de213247222421e') in 0.021539 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/Scripts/ElectricCircuitScene/Objects/Outline.cs
+  artifactKey: Guid(371a2d90e00ec85428a48c2635792a83) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/ElectricCircuitScene/Objects/Outline.cs using Guid(371a2d90e00ec85428a48c2635792a83) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'b170cbc1b076a5d4bbe16d338d567e05') in 0.006821 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Pole.mat
+  artifactKey: Guid(31f7de3b841c671438fee7b108ff4d73) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Pole.mat using Guid(31f7de3b841c671438fee7b108ff4d73) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '7ed80d1d1d20368ab6ca044032354778') in 0.013186 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Rope_Lines.mat
+  artifactKey: Guid(015a5d4a93adcec4b9b7251f6aa8421b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Rope_Lines.mat using Guid(015a5d4a93adcec4b9b7251f6aa8421b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '70911ff450bbe07b2fe132e1f47202b0') in 0.014785 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Anim/ElectricCircuitScene/CanvasElements/BPanel/ClosePanel.anim
+  artifactKey: Guid(97b5faec9d18ce74f9d86e98e0c7f7b4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Anim/ElectricCircuitScene/CanvasElements/BPanel/ClosePanel.anim using Guid(97b5faec9d18ce74f9d86e98e0c7f7b4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '9f97416f1ce35071b3edaffd94ba0dc1') in 0.008878 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000127 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Sky.mat
+  artifactKey: Guid(6f010e6bc9a997043af715aafff4e590) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Sky.mat using Guid(6f010e6bc9a997043af715aafff4e590) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'abd2cb3e2fa9143bc6bc39c3fa723f3b') in 0.019120 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000122 seconds.
+  path: Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt
+  artifactKey: Guid(fade42e8bc714b018fac513c043d323b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt using Guid(fade42e8bc714b018fac513c043d323b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '1e0fec48ae7539481cf3881f69f2aec6') in 0.007434 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000113 seconds.
+  path: Assets/Scripts/ElectricCircuitScene/Player/PlaceNewObjects.cs
+  artifactKey: Guid(50aa947f1ce97b149aa056d71b7f5ee1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/ElectricCircuitScene/Player/PlaceNewObjects.cs using Guid(50aa947f1ce97b149aa056d71b7f5ee1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '74cb9ea0e2702b1c61fe78f00e4905ee') in 0.006817 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Material/Rope.mat
+  artifactKey: Guid(f3173e46b405f974e9de43ca224c9de8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Material/Rope.mat using Guid(f3173e46b405f974e9de43ca224c9de8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'ed887a28014658f45984b77f6eee4738') in 0.016716 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Prefab/SimplePole Variant.prefab
+  artifactKey: Guid(ec513d6c363517043a5306a95a34dcdf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Prefab/SimplePole Variant.prefab using Guid(ec513d6c363517043a5306a95a34dcdf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '651db5936df1e1f1011d0272742a94e5') in 0.020543 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Prefab/ElectricCircuitScene/BlenderObjects/voltmeter.fbx
+  artifactKey: Guid(2028dd3ce8db2ef4f81a2d24685e1bb9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Prefab/ElectricCircuitScene/BlenderObjects/voltmeter.fbx using Guid(2028dd3ce8db2ef4f81a2d24685e1bb9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '8341cbdc3719f96eee92f73c8a20c15a') in 0.037852 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 31
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+  artifactKey: Guid(2e498d1c8094910479dc3e1b768306a4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset using Guid(2e498d1c8094910479dc3e1b768306a4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'bf5fa35e9c51d4d666339bc68abf75af') in 0.064357 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Computer/Screen.mat
+  artifactKey: Guid(74b988f8c0b2ce04cb6da4c03afccb8e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Computer/Screen.mat using Guid(74b988f8c0b2ce04cb6da4c03afccb8e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '23647aeb87e02645525a8a091c3238e9') in 0.013923 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Computer/CPU 1.mat
+  artifactKey: Guid(412e751c6aae91a43ba220a56788749a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Computer/CPU 1.mat using Guid(412e751c6aae91a43ba220a56788749a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'cf871d5e2ca5ebf7324ca05ed7011c12') in 0.012348 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Script/Editor/RopeEditor.cs
+  artifactKey: Guid(ebbe5df04ba618f4e8a2bcf5703dd4a4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Script/Editor/RopeEditor.cs using Guid(ebbe5df04ba618f4e8a2bcf5703dd4a4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '2424e6093f6b9b6ef6724d6134ae8bd0') in 0.005997 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Material/Texture/rope_lines.png
+  artifactKey: Guid(00ec566a401bcc448964c91576fb12d3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Material/Texture/rope_lines.png using Guid(00ec566a401bcc448964c91576fb12d3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '7c69ecc482048370184f80b0ac1eb7f5') in 0.018727 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Material/Texture/Materials/rope_diff.mat
+  artifactKey: Guid(5a4c421ddb0575d4ab3e0037fabb0959) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Material/Texture/Materials/rope_diff.mat using Guid(5a4c421ddb0575d4ab3e0037fabb0959) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '952b016857802705d837f9370b050697') in 0.022033 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Material/Texture/rope_diff.png
+  artifactKey: Guid(6d98ce67985b565408888d47b2e32a30) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Material/Texture/rope_diff.png using Guid(6d98ce67985b565408888d47b2e32a30) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'a1a04051583d4e53222400c20a60ab6a') in 0.018193 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Scripts/MagneticFieldScene/Objects/Charge.cs
+  artifactKey: Guid(2b4f9eeff6187ef4ea872767475a433c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/MagneticFieldScene/Objects/Charge.cs using Guid(2b4f9eeff6187ef4ea872767475a433c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'a45bbd4c150a61187961a97aaced4557') in 0.010026 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/RopeWire 1.mat
+  artifactKey: Guid(61ff72cdadfa39c479042b9f7bb26048) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/RopeWire 1.mat using Guid(61ff72cdadfa39c479042b9f7bb26048) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '46be03e8134026684c7ae7bb3e728891') in 0.012610 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Prefab/ElectricCircuitScene/Resistor.prefab
+  artifactKey: Guid(7745fe0185235c544add42d60cf95e38) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Prefab/ElectricCircuitScene/Resistor.prefab using Guid(7745fe0185235c544add42d60cf95e38) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '3797cf939a278ea26ae51ece1dba0fd4') in 0.020815 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 52
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Scripts/ElectricCircuitScene/Objects/PortManager.cs
+  artifactKey: Guid(b06e624f06291cf42a62d2221e795f14) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/ElectricCircuitScene/Objects/PortManager.cs using Guid(b06e624f06291cf42a62d2221e795f14) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '5eb116af17ac00bde172dc520da5ed84') in 0.006798 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/IMG/Resistor.png
+  artifactKey: Guid(31b72b41972e5aa4185a9ac06b448415) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/IMG/Resistor.png using Guid(31b72b41972e5aa4185a9ac06b448415) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '3a09648c114099a0f160895a0fa8e608') in 0.034045 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Prefab/ElectricCircuitScene/BlenderObjects/edc.fbx
+  artifactKey: Guid(702ab1be6ed985342aff291ecf6f7b07) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Prefab/ElectricCircuitScene/BlenderObjects/edc.fbx using Guid(702ab1be6ed985342aff291ecf6f7b07) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '0e9efe5444064ab8b9121e23385b05ae') in 0.035789 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 48
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Prefab/ElectricCircuitScene/EDC.prefab
+  artifactKey: Guid(6ce02a4f354330a4e9467c119b9551d1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Prefab/ElectricCircuitScene/EDC.prefab using Guid(6ce02a4f354330a4e9467c119b9551d1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '32b95e4b5fa1396267c434bf9051ecbc') in 0.050802 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 101
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Prefab/Headphone.prefab
+  artifactKey: Guid(3919c1fed42267d42af690f71b382826) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Prefab/Headphone.prefab using Guid(3919c1fed42267d42af690f71b382826) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '182dbf8b6a83953a623611c5b94b74eb') in 0.019943 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Rope_Textured.mat
+  artifactKey: Guid(84a53081139c2a345a118d37b69c8e7e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Material/Rope_Textured.mat using Guid(84a53081139c2a345a118d37b69c8e7e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'd67c9346529e0944f750ced055ab380f') in 0.016699 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Documentation.pdf
+  artifactKey: Guid(bd5a1f26a955b0245b41c7aa5b241c66) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Documentation.pdf using Guid(bd5a1f26a955b0245b41c7aa5b241c66) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'fad4d9975e18a0b2d5743e907ced8f98') in 0.003681 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Prefab/ElectricCircuitScene/BlenderObjects/resistor.fbx
+  artifactKey: Guid(de9a8fc0af09fde43970fde0bcbaecca) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Prefab/ElectricCircuitScene/BlenderObjects/resistor.fbx using Guid(de9a8fc0af09fde43970fde0bcbaecca) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '3c1f3e48cac144b84c9192da790028ea') in 0.028085 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 26
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc
+  artifactKey: Guid(3997e2241185407d80309a82f9148466) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc using Guid(3997e2241185407d80309a82f9148466) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '003facc78d14a22f95926d34d364669c') in 0.010703 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Scenes/ExampleScene/LightingData.asset
+  artifactKey: Guid(6a73d0897ca66b640ab75464e3990ff2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/GogoGaga/OptimizedRopesAndCables/Example/Scenes/ExampleScene/LightingData.asset using Guid(6a73d0897ca66b640ab75464e3990ff2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'cdb4defb717a42c4a31d9f0f409481a9') in 0.019669 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF.shader
+  artifactKey: Guid(68e6db2ebdc24f95958faec2be5558d6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF.shader using Guid(68e6db2ebdc24f95958faec2be5558d6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: '89492789fb1795e4157def5a56f8073a') in 0.008535 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000133 seconds.
+  path: Assets/Materials/MagneticFieldScene/Proton.mat
+  artifactKey: Guid(4df23afb4e6926041901fd3b67a95e4e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Materials/MagneticFieldScene/Proton.mat using Guid(4df23afb4e6926041901fd3b67a95e4e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'db2e03975a0d5cc878674e596aa7588f') in 0.014730 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader
+  artifactKey: Guid(85187c2149c549c5b33f0cdb02836b17) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader using Guid(85187c2149c549c5b33f0cdb02836b17) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 20 workers.
+ -> (artifact id: 'e5fb629126587da0fa5ebc217e2fb572') in 0.009106 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: ќпераци€ ввода/вывода была прервана из-за завершени€ потока команд или по запросу приложени€.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

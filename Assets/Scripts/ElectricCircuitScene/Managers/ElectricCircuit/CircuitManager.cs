@@ -180,6 +180,8 @@ public class Circuit
     public void StartCircuit()
     {
         List<VoltageSource> allVoltageCircuits = new();
+        
+        PortTracker.Instance.ClearPorts();
 
         foreach (var i in componentList)
         {
@@ -191,7 +193,15 @@ public class Circuit
                     allVoltageCircuits.Add(VC);
                 }
             }
-        }
+
+            if (i.ComponentType == ElectricCircuitCompType.Ammeter)
+            {
+                if (i.TryGetComponent(out Ammeter ammeter))
+                {
+                    PortTracker.Instance.AddNewAmmeter();
+                }
+            }
+    }
 
         if (allVoltageCircuits.Count == 0)
         {
@@ -228,7 +238,7 @@ public class Circuit
 
             float allAmperageCount = allVoltageCircuits[0].componentCount / convertedCodes[0].Count;
 
-            allVoltageCircuits[0].transform.GetChild((1)).GetComponent<Port>()
+            allVoltageCircuits[0].transform.GetChild((2)).GetComponent<Port>()
                 .StartCountingAmperStrength(allAmperageCount);
         }
         else

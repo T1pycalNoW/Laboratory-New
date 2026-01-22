@@ -16,9 +16,9 @@ public class PortManager : MonoBehaviour
 
     public Port GetOppositePort(Port port)
     {
-        if(port != port1 && port != port2) throw new System.Exception("Not valid enter informstion");
+        if(port != port1 && port != port2) throw new System.Exception("Not valid enter information");
 
-        return port = port1 ? port2 : port1;
+        return port == port1 ? port2 : port1;
     }
     
     private bool CheckPorts()

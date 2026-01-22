@@ -363,6 +363,7 @@
 "Assets/Scripts/ElectricCircuitScene/Managers/ElectricCircuit/LineManager.cs"
 "Assets/Scripts/ElectricCircuitScene/Managers/ElectricCircuit/ObjectManager.cs"
 "Assets/Scripts/ElectricCircuitScene/Managers/ElectricCircuit/Port.cs"
+"Assets/Scripts/ElectricCircuitScene/Managers/ElectricCircuit/PortTracker.cs"
 "Assets/Scripts/ElectricCircuitScene/Objects/Button.cs"
 "Assets/Scripts/ElectricCircuitScene/Objects/ColorChanger.cs"
 "Assets/Scripts/ElectricCircuitScene/Objects/DemoObject.cs"

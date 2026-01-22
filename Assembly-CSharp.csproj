@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\ElectricCircuitScene\Managers\Canvas\CanvasManager.cs" />
     <Compile Include="Assets\Scripts\ElectricCircuitScene\Managers\ElectricCircuit\LineManager.cs" />
     <Compile Include="Assets\Scripts\ElectricCircuitScene\Objects\PortManager.cs" />
+    <Compile Include="Assets\Scripts\ElectricCircuitScene\Managers\ElectricCircuit\PortTracker.cs" />
     <Compile Include="Assets\Scripts\ElectricCircuitScene\Objects\ColorChanger.cs" />
     <Compile Include="Assets\Scripts\ElectricCircuitScene\Player\ChangeObjectInformation.cs" />
     <Compile Include="Assets\Scripts\MagneticFieldScene\Managers\ChargeForceManager.cs" />

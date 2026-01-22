@@ -38,7 +38,7 @@ public class LineManager : MonoBehaviour
                 curLine.SetEndPoint(hitPoint.transform);
             }
 
-            if(Input.GetKeyDown(KeyCode.Delete))
+            if(Input.GetKeyDown(KeyCode.Escape))
             {
                 StopDrawing();
             }
@@ -103,6 +103,8 @@ public class LineManager : MonoBehaviour
         
         firstPort.AddNewPort(secondPort.ID);
         secondPort.AddNewPort(firstPort.ID);
+        firstPort.AddNewLine(curLine);
+        secondPort.AddNewLine(curLine);
         
         CircuitManager.Instance.AddNewCircuitComponents(parent1, parent2);
 

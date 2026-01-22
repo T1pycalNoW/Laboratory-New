@@ -54,8 +54,6 @@ public class MouseRaycast : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.Log(hit.collider.gameObject);
-
             if (hit.collider.CompareTag(tag))
             {
                 return hit.collider.gameObject;
