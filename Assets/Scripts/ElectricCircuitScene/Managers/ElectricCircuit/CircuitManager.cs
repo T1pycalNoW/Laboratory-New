@@ -201,7 +201,13 @@ public class Circuit
                     PortTracker.Instance.AddNewAmmeter();
                 }
             }
-    }
+            
+            Port port1 = i.transform.GetChild(1).GetComponent<Port>();
+            Port port2 = i.transform.GetChild(2).GetComponent<Port>();
+
+            port1.AmperageCount = 0;
+            port2.AmperageCount = 0;
+        }
 
         if (allVoltageCircuits.Count == 0)
         {

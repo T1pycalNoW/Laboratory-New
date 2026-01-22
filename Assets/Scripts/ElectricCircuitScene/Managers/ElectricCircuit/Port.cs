@@ -156,6 +156,8 @@ public class Port : MonoBehaviour, IInteractable
                 resistors.Add(resistor);
                 
                 CountResistor newCountResistor = new(resistor.componentCount, resistor, oppositePort.GetComponent<Port>());
+
+                Debug.Log($"Показатель резистора: {resistor.componentCount}");
             
                 countResistors.Add(newCountResistor);
             }
@@ -172,6 +174,8 @@ public class Port : MonoBehaviour, IInteractable
             else
             {
                 Debug.Log("Did not found Resistor or Ammeter"); 
+                
+                yield break;
             }
         }
 
@@ -186,27 +190,28 @@ public class Port : MonoBehaviour, IInteractable
         
         Debug.Log($"Отладка: параллельное соединение. Найдено резисторов (включая амперметры) - {resistors.Count}, " +
                   $"переведено в расчетную систему - {countResistors.Count}.");
+        
+        float otherResistorSum = 0f;
+        
+        foreach (var other in countResistors)
+        {
+            otherResistorSum += other.ResistorCount;
+        }
 
         foreach (var resistor in countResistors)
         {
-            float otherResistorSum = 0f;
-
             float newNnAmperValue = 0f;
             
-            foreach (var other in countResistors)
-            {
-                if (other == resistor) continue;
-
-                otherResistorSum += other.ResistorCount;
-            }
-            
             newNnAmperValue = (float)Math.Round(resistor.ResistorCount / otherResistorSum * ammerStrength, 2);
+            
+            Debug.Log($"Добавление абстрактного показателя тока: resistor.Count - {resistor.ResistorCount}, resistorSum - {otherResistorSum}, ammerStrength - {ammerStrength}");
             
             countAmperages.Add(newNnAmperValue);
         }
         
-        countResistors.Sort((x, y) => y.ResistorCount.CompareTo(y.ResistorCount)); // Сортировка по возрастанию
+        countResistors.Sort((x, y) => y.ResistorCount.CompareTo(y.ResistorCount)); // Сортировка по возрастанию по элементу
         countAmperages.Sort();
+        countAmperages.Reverse();
 
         yield return null;
 
