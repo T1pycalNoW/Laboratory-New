@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ammeter : CircuitComponent
 {
@@ -11,11 +13,15 @@ public class Ammeter : CircuitComponent
     [SerializeField] private Port port1Comp;
     [SerializeField] private Port port2Comp;
 
+    [SerializeField] private TextMeshProUGUI uiAmmText;
+
     public void UpdateAmperageCount()
     {
         if(port1Comp.AmperageCount != 0)
         {
             Amperage = port1Comp.AmperageCount;
+            
+            UpdateUI(Amperage);
             
             PortTracker.Instance.DeleteAmmeter();
             
@@ -25,6 +31,8 @@ public class Ammeter : CircuitComponent
         {
             Amperage = port2Comp.AmperageCount;
             
+            UpdateUI(Amperage);
+            
             PortTracker.Instance.DeleteAmmeter();
             
             Debug.Log("Succesfull");
@@ -33,5 +41,10 @@ public class Ammeter : CircuitComponent
         {
             Debug.Log("Mistake!");
         }
+    }
+
+    private void UpdateUI(float num)
+    {
+        uiAmmText.text = num.ToString();
     }
 }

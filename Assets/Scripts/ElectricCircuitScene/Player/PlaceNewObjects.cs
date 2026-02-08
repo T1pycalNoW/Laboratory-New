@@ -68,6 +68,8 @@ public class PlaceNewObjects : MonoBehaviour
 
             ObjectManager.Instance.AddObject(newObj);
             
+            newObj.SetActive(true);
+            
             StopDrawing();
         }
     }

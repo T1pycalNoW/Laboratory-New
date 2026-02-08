@@ -208,10 +208,21 @@ public class Port : MonoBehaviour, IInteractable
             
             countAmperages.Add(newNnAmperValue);
         }
+
+        for (int x = 0; x < resistors.Count; x++)
+        {
+            for (int y = 0; y < resistors.Count; y++)
+            {
+                if (countResistors[x].ResistorCount > countResistors[y].ResistorCount)
+                {
+                    CountResistor countResistor = countResistors[x];
+                    countResistors[x] = countResistors[y];
+                    countResistors[y] =  countResistor;
+                }
+            }
+        }
         
-        countResistors.Sort((x, y) => y.ResistorCount.CompareTo(y.ResistorCount)); // Сортировка по возрастанию по элементу
         countAmperages.Sort();
-        countAmperages.Reverse();
 
         yield return null;
 

@@ -66,12 +66,12 @@ public class ChangeObjectInformation : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                ChangeRotation(-90);
+                ChangeRotation(90);
             }
 
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                ChangeRotation(90);
+                ChangeRotation(-90);
             }
 
             if (Input.GetKeyDown(KeyCode.Delete))

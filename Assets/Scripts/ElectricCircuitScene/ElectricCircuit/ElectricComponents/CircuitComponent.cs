@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public abstract class CircuitComponent : MonoBehaviour
@@ -9,6 +10,17 @@ public abstract class CircuitComponent : MonoBehaviour
     public int ID;
     public ElectricCircuitCompType ComponentType;
     public float componentCount;
+
+    public void ChangeValue(float value)
+    {
+        componentCount = value;
+        if (uiText != null)
+        {
+            uiText.text = value.ToString();
+        }
+    }
+    
+    [SerializeField] private TextMeshProUGUI uiText;
 
     #endregion
 
@@ -72,6 +84,11 @@ public abstract class CircuitComponent : MonoBehaviour
             InitPorts(_port.ID, _port.ID);
 
             return;
+        }
+
+        if (uiText != null)
+        {
+            ChangeValue(componentCount);
         }
 
         Port _port1 = transform.GetChild(1).GetComponent<Port>();
