@@ -78,9 +78,9 @@ public abstract class CircuitComponent : MonoBehaviour
 
     private void Start ()
     {
-        if(this.gameObject.name == "Point")
+        if(this.ComponentType == ElectricCircuitCompType.Point)
         {
-            Port _port = transform.GetChild(0).GetComponent<Port>();
+            Port _port = transform.GetChild(1).GetComponent<Port>();
             InitPorts(_port.ID, _port.ID);
 
             return;
@@ -90,7 +90,7 @@ public abstract class CircuitComponent : MonoBehaviour
         {
             ChangeValue(componentCount);
         }
-
+        
         Port _port1 = transform.GetChild(1).GetComponent<Port>();
         Port _port2 = transform.GetChild(2).GetComponent<Port>();
 
